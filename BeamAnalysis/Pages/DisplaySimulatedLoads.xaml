@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="BeamAnalysis.Pages.DisplaySimulatedLoads"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel x:Name="Rpanel">
+      
+        <TextBlock x:Name="TblkDisplaySimulatedLoadsNote" Text="TblkDisplaySimulatedLoadsNote" Margin="16,8,16,4" TextWrapping="WrapWholeWords" TextAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+        <!-- Next line requires a fixed width font to align output vertically. Best choice is Consolas. Options are Consolas, Courier New, Lucida Console, Lucida Sans Typewriter. -->
+        <TextBlock x:Name="TblkDisplaySimulatedLoadsOutput" Text="TblkDisplaySimulatedLoadsOutput" Margin="16,4,16,16" IsTextSelectionEnabled="True" FontFamily="Consolas" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkDisplaySimulatedLoadsNote"/>
+        
+    </RelativePanel>
+    
+</Page>

@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="BeamAnalysis.Pages.EnterLoadsUniform"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
+    
+    <RelativePanel x:Name="Rpanel">
+
+        <TextBlock x:Name="TblkLoadUniformNote" Text="TblkLoadUniformNote" Margin="16,8,16,6" TextWrapping="WrapWholeWords" TextAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+        <TextBlock x:Name="TblkLoadUniformBeamLength" Text="TblkLoadUniformBeamLength" Margin="16,6,16,6" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformNote"/>
+        <!-- Next line requires a fixed width font to align support and concentrated load output vertically. Best choice is Consolas. Options are Consolas, Courier New, Lucida Console, Lucida Sans Typewriter. -->
+        <TextBlock x:Name="TblkLoadUniformDisplay" Text="TblkLoadUniformDisplay" Margin="16,6,16,6" FontFamily="Consolas" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformBeamLength"/>
+        <TextBlock x:Name="TblkLoadUniformResult" Text="TblkLoadUniformResult" Margin="16,6,16,6" TextWrapping="WrapWholeWords" TextAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformDisplay"/>
+        <TextBlock x:Name="TblkLoadUniformLostFocus" Text="TblkLoadUniformLostFocus" Margin="16,6,16,6" TextWrapping="WrapWholeWords" TextAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformResult"/>
+
+        <TextBlock x:Name="TblkLoadUniformPositionLeft" Text="TblkLoadUniformPositionLeft" Margin="16,6,16,2" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformLostFocus"/>
+        <TextBox x:Name="TboxLoadUniformPositionLeft" TabIndex="102" PlaceholderText="TboxLoadUniformPositionLeft" Margin="16,2,16,6" MinWidth="30" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformPositionLeft" InputScope="FormulaNumber" KeyDown="TboxLoadUniformPositionLeft_KeyDown" LostFocus="TboxLoadUniformPositionLeft_LostFocus" TextChanged="TboxLoadUniformPositionLeft_TextChanged"/>
+        <TextBlock x:Name="TblkLoadUniformForceLeft" Text="TblkLoadUniformForceLeft" Margin="16,6,16,2" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TboxLoadUniformPositionLeft"/>
+        <TextBox x:Name="TboxLoadUniformForceLeft" TabIndex="103" PlaceholderText="TboxLoadUniformForceLeft" Margin="16,2,16,6" MinWidth="30" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformForceLeft" InputScope="FormulaNumber" KeyDown="TboxLoadUniformForceLeft_KeyDown" LostFocus="TboxLoadUniformForceLeft_LostFocus" TextChanged="TboxLoadUniformForceLeft_TextChanged"/>
+        <TextBlock x:Name="TblkLoadUniformPositionRight" Text="TblkLoadUniformPositionRight" Margin="16,6,16,2" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TboxLoadUniformForceLeft"/>
+        <TextBox x:Name="TboxLoadUniformPositionRight" TabIndex="104" PlaceholderText="TboxLoadUniformPositionRight" Margin="16,2,16,6" MinWidth="30" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformPositionRight" InputScope="FormulaNumber" KeyDown="TboxLoadUniformPositionRight_KeyDown" LostFocus="TboxLoadUniformPositionRight_LostFocus" TextChanged="TboxLoadUniformPositionRight_TextChanged"/>
+        <TextBlock x:Name="TblkLoadUniformForceRight" Text="TblkLoadUniformForceRight" Margin="16,6,16,2" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TboxLoadUniformPositionRight"/>
+        <TextBox x:Name="TboxLoadUniformForceRight" TabIndex="105" PlaceholderText="TboxLoadUniformForceRight" Margin="16,2,16,6" MinWidth="30" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkLoadUniformForceRight" InputScope="FormulaNumber" KeyDown="TboxLoadUniformForceRight_KeyDown" LostFocus="TboxLoadUniformForceRight_LostFocus" TextChanged="TboxLoadUniformForceRight_TextChanged"/>
+        
+        <Button Name="ButLoadUniformAdd" TabIndex="106" Content="ButLoadUniformAdd" Margin="16,6,16,6" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TboxLoadUniformForceRight" Click="ButLoadUniformAdd_Click" LostFocus="ButLoadUniform_LostFocus"/>
+        <Button Name="ButLoadUniformReturn" TabIndex="107" Content="ButLoadUniformReturn" Margin="16,6,16,6" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="ButLoadUniformAdd" Click="ButLoadUniformReturn_Click" LostFocus="ButLoadUniform_LostFocus"/>
+        <Button Name="ButLoadUniformClear" TabIndex="108" Content="ButLoadUniformClear" Margin="16,6,16,6" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="ButLoadUniformReturn" Click="ButLoadUniformClear_Click" LostFocus="ButLoadUniform_LostFocus"/>
+        <Button Name="ButLoadUniformSimulatedLoads" TabIndex="109" Content="ButLoadUniformSimulatedLoads" Margin="16,6,16,16" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="ButLoadUniformClear" Click="ButLoadUniformSimulatedLoads_Click" LostFocus="ButLoadUniform_LostFocus"/>
+        
+    </RelativePanel>
+    
+</Page>

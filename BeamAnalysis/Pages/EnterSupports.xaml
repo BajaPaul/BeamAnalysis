@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="BeamAnalysis.Pages.EnterSupports"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <RelativePanel x:Name="Rpanel">
+
+        <TextBlock x:Name="TblkSupportNote" Text="TblkSupportNote" Margin="16,8,16,6" TextWrapping="WrapWholeWords" TextAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+        <TextBlock x:Name="TblkSupportBeamLength" Text="TblkSupportBeamLength" Margin="16,6,16,6" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkSupportNote"/>
+        <!-- Next line requires a fixed width font to align support output vertically. Best choice is Consolas. Options are Consolas, Courier New, Lucida Console, Lucida Sans Typewriter. -->
+        <TextBlock x:Name="TblkSupportDisplay" Text="TblkSupportDisplay" Margin="16,6,16,6" FontFamily="Consolas" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkSupportBeamLength"/>
+        <TextBlock x:Name="TblkSupportResult" Text="TblkSupportResult" Margin="16,6,16,6" TextWrapping="WrapWholeWords" TextAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkSupportDisplay"/>
+        <TextBlock x:Name="TblkSupportLostFocus" Text="TblkSupportLostFocus" Margin="16,6,16,6" TextWrapping="WrapWholeWords" TextAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkSupportResult"/>
+
+        <TextBlock x:Name="TblkSupportPosition" Text="TblkSupportPosition" Margin="16,6,16,2" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkSupportLostFocus"/>
+        <TextBox x:Name="TboxSupportPosition" TabIndex="101" PlaceholderText="TboxSupportPosition" Margin="16,2,16,6" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TblkSupportPosition" InputScope="FormulaNumber" KeyDown="TboxSupportPosition_KeyDown" LostFocus="TboxSupportPosition_LostFocus" TextChanged="TboxSupportPosition_TextChanged"/>
+
+        <ToggleSwitch x:Name="TogSupportDisplacement" TabIndex="102" Margin="16,0,16,2" HorizontalAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TboxSupportPosition" Toggled="TogSupportDisplacement_Toggled" LostFocus="TogSupportDisplacement_LostFocus">
+            <!-- Following breakout allows Text and Foreground color to be set in code behind. -->
+            <ToggleSwitch.Header>
+                <TextBlock x:Name="TblkSupportDisplacement" Text="TblkSupportDisplacement"/>
+            </ToggleSwitch.Header>
+        </ToggleSwitch>
+
+        <ToggleSwitch x:Name="TogSupportRotation" TabIndex="103" Margin="16,2" HorizontalAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TogSupportDisplacement" Toggled="TogSupportRotation_Toggled" LostFocus="TogSupportRotation_LostFocus">
+            <!-- Following breakout allows Text and Foreground color to be set in code behind. -->
+            <ToggleSwitch.Header>
+                <TextBlock x:Name="TblkSupportRotation" Text="TblkSupportRotation"/>
+            </ToggleSwitch.Header>
+        </ToggleSwitch>
+
+        <Button Name="ButSupportAdd" TabIndex="104" Content="ButSupportAdd" Margin="16,6,16,6" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="TogSupportRotation" Click="ButSupportAdd_Click" LostFocus="ButSupport_LostFocus"/>
+        <Button Name="ButSupportReturn" TabIndex="105" Content="ButSupportReturn" Margin="16,6,16,6" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="ButSupportAdd" Click="ButSupportReturn_Click" LostFocus="ButSupport_LostFocus"/>
+        <Button Name="ButSupportClear" TabIndex="106" Content="Clear supports" Margin="16,6,16,6" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="ButSupportReturn" Click="ButSupportClear_Click" LostFocus="ButSupport_LostFocus"/>
+        <Button Name="ButSupportDefined1" TabIndex="107" Content="ButSupportDefined1" Margin="16,6,16,6" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="ButSupportClear" Click="ButSupportDefined1_Click" LostFocus="ButSupport_LostFocus"/>
+        <Button Name="ButSupportDefined2" TabIndex="108" Content="ButSupportDefined2" Margin="16,6,16,16" Style="{StaticResource ButtonRevealStyle}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="ButSupportDefined1" Click="ButSupportDefined2_Click" LostFocus="ButSupport_LostFocus"/>
+        
+    </RelativePanel>
+</Page>
